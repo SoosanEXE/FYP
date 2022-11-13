@@ -8,6 +8,18 @@
         exception will be thrown when given dataset doesnt have 'attack' col
 """
 
+from pandas.core.frame import DataFrame
+
 def BinMap(df):
-    df['attack_class']  = df['attack'].apply(lambda v: 0 if v == "Normal" else 1)
-    return df
+    # map label to either 0 or 1
+    try:
+        if not isinstance(df, DataFrame):
+            raise TypeError
+        df['attack_class']  = df['label'].apply(lambda v: 0 if v == "normal" else 1)
+        df = df.drop('label', axis=1)
+    except TypeError as ex:
+        print("Expected type of arg: pandas.core.frame.DataFrame")
+    except KeyError:
+        print("Please ensure df has col named 'label'")
+    else:
+        return df
