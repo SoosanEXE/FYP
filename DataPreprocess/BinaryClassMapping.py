@@ -18,7 +18,7 @@ def BinMap(df):
         df['attack_class']  = df['label'].apply(lambda v: 0 if v == "normal" else 1)
         df = df.drop('label', axis=1)
     except TypeError as ex:
-        print("Expected type of arg: pandas.core.frame.DataFrame")
+        print(f"Expected type of arg: pandas.core.frame.DataFrame {str(ex)}")
     except KeyError:
         print("Please ensure df has col named 'label'")
     else:
