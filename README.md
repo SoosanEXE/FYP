@@ -1,6 +1,5 @@
 # FYP
 # TODO
-- integrate UNSW in main.py
 - train models on unsw
 - create a notebook for preprocessing and save the datasets
     - use these datasets hence forth for the models
