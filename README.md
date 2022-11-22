@@ -1,15 +1,4 @@
 # FYP
-
-## git repo for Final Year Project
-
-# team
-
-# sudharsan
-
-# Suba Varshini
-
-# Srikanth
-
 # TODO
 - integrate UNSW in main.py
 - train models on unsw
