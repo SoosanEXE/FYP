@@ -1,10 +1,5 @@
 import pandas as pd
 from DataSets import constants as paths
-from DataPreprocess import constants
-from DataPreprocess.BinaryClassMapping import BinMap, BinMap1
-from DataPreprocess.Scaling import Scaling
-from DataPreprocess.Encoding import Encoding
-from DataPreprocess.FeatureSelection import FeatureSelection
 from AnomalyClassifier.AnomalyClassifier import AnomalyClassifier_nsl, AnomalyClassifier_unsw
 from EvalMetrics.EvalMetrics import EvalMetrics
 from joblib import Parallel, delayed
@@ -30,9 +25,7 @@ print("     UNSW-NB15 Evaluation      ")
 print("--------------------------------")
 clf1, X_test1, y_test1 = AnomalyClassifier_unsw.getAnomalyClassifier(df_new1, 'attack_cat')
 EvalMetrics.metrics(clf1, X_test1, y_test1)
-
-joblib.dump(clf, "NSLAnoClf.pkl")
-joblib.dump(clf1, "UNSWAnoClf.pkl")
+joblib.dump(clf, "FYP/NSLAnoClf.pkl")
+joblib.dump(clf1, "FYP/UNSWAnoClf.pkl")
 print("     Model Saved      ")
-
 print("---------------------------------------------------------------------")
