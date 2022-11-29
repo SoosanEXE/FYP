@@ -14,7 +14,7 @@ class EvalMetrics:
     def metrics(clf, X_test, y_test):
         try:
             y_pred = clf.predict(X_test)
-            print("\n\n----Evaluation----\n")
+            
             print("Confusion Matrix:")
             tn, fp, fn, tp = confusion_matrix(y_test, y_pred, labels=[0, 1]).ravel()
             print(confusion_matrix(y_test, y_pred))
