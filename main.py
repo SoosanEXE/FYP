@@ -18,8 +18,8 @@ warnings.filterwarnings('ignore')
 
 #read datasets
 print("Reading PreProcessed dataset")
-df_new = pd.read_parquet("KDDpreprocessed.parquet")
-df_new1 = pd.read_parquet("UNSWpreprocessed.parquet")
+df_new = pd.read_parquet(paths.PRE_DATA_NSL)
+df_new1 = pd.read_parquet(paths.PRE_DATA_UNSW)
 print("--------------------------------")
 print("     NSL-KDD Evaluation        ")
 print("--------------------------------")
