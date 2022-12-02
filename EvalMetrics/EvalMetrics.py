@@ -5,7 +5,9 @@
 """
 
 from sklearn.metrics import confusion_matrix
-from sklearn.metrics import (precision_score, recall_score,f1_score, confusion_matrix ,accuracy_score)
+from sklearn.metrics import (precision_score, recall_score,f1_score, confusion_matrix ,accuracy_score, ConfusionMatrixDisplay)
+import matplotlib.pyplot as plt
+
 class EvalMetrics:
     def __init__():
         return
@@ -17,6 +19,10 @@ class EvalMetrics:
             
             print("Confusion Matrix:")
             tn, fp, fn, tp = confusion_matrix(y_test, y_pred, labels=[0, 1]).ravel()
+            cm = confusion_matrix(y_test, y_pred, labels=[0, 1])
+            disp = ConfusionMatrixDisplay(cm, display_labels=clf.classes_)
+            disp.plot()
+            plt.show()
             print(confusion_matrix(y_test, y_pred))
 
             print("\nAccuracy:")
