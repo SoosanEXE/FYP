@@ -26,8 +26,11 @@ class EvalMetrics:
             disp.plot()
             plt.show()
             
-            y_score = clf.predict_proba()
+            y_score = clf.predict_proba(X_test)[:,-1]
             fpr, tpr, thresh = roc_curve(y_test, y_score)
+            plt.plot(fpr, tpr)
+            plt.xlabel('False Positive Rate')
+            plt.ylabel('True Positive Rate') 
 
             print("\nAccuracy:")
             print(accuracy_score(y_test, y_pred))
@@ -42,6 +45,7 @@ class EvalMetrics:
             print(f1_score(y_test, y_pred, average=None))
 
             print("\n False positive rate:")
+            print(fpr)
             
         except AttributeError as ex:
             print(f"Please ensure an ML model is provided as an arg {str(ex)}")
