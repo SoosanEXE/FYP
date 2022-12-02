@@ -5,7 +5,9 @@
 """
 
 from sklearn.metrics import confusion_matrix
-from sklearn.metrics import (precision_score, recall_score,f1_score, confusion_matrix ,accuracy_score, ConfusionMatrixDisplay)
+from sklearn.metrics import (precision_score, recall_score,\
+    f1_score, confusion_matrix ,accuracy_score, \
+        ConfusionMatrixDisplay, roc_curve, roc_auc_score)
 import matplotlib.pyplot as plt
 
 class EvalMetrics:
@@ -23,7 +25,9 @@ class EvalMetrics:
             disp = ConfusionMatrixDisplay(cm, display_labels=clf.classes_)
             disp.plot()
             plt.show()
-            print(confusion_matrix(y_test, y_pred))
+            
+            y_score = clf.predict_proba()
+            fpr, tpr, thresh = roc_curve(y_test, y_score)
 
             print("\nAccuracy:")
             print(accuracy_score(y_test, y_pred))
@@ -38,8 +42,7 @@ class EvalMetrics:
             print(f1_score(y_test, y_pred, average=None))
 
             print("\n False positive rate:")
-            fpr = fp / (tn+fp)
-            print(fpr)
+            
         except AttributeError as ex:
             print(f"Please ensure an ML model is provided as an arg {str(ex)}")
         except Exception as ex:
