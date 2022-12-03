@@ -33,7 +33,7 @@ class AnomalyClassifier_nsl:
             clfs.append(('AdaBoost', adc))
 
             # create voting classifier 
-            anoClf = VotingClassifier(estimators=clfs, voting='hard')
+            anoClf = VotingClassifier(estimators=clfs, voting='soft')
 
             # seperate target and independent features
             X = df.drop(target, axis=1)
