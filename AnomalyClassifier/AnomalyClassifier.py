@@ -67,7 +67,7 @@ class AnomalyClassifier_unsw:
             clfs.append(('Lightgbm', gbm))
 
             # create voting classifier 
-            anoClf = VotingClassifier(estimators=clfs, voting='hard')
+            anoClf = VotingClassifier(estimators=clfs, voting='soft')
 
             # seperate target and independent features
             X = df.drop(target, axis=1)
