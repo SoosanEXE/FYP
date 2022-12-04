@@ -45,6 +45,7 @@ df1 = resultMap1(df1)
 
 joblib.dump(clf, "FYP/NSLAnoClf.pkl")
 joblib.dump(clf1, "FYP/UNSWAnoClf.pkl")
+print("---------------------------------------------------------------------")
 print("     Model Saved      ")
 print("---------------------------------------------------------------------")
 report.report_nsl(df)
