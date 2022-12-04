@@ -39,9 +39,9 @@ class AnomalyClassifier_nsl:
             X = df.drop(target, axis=1)
             y = df[target]
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=50, shuffle=True)
-            y_pred = anoClf.predict(X)
             # fit the model
             anoClf.fit(X_train, y_train)
+            y_pred = anoClf.predict(X)
         except TypeError as ex:
             print("Expected type of arg: pandas.core.frame.DataFrame")
         except Exception as ex:
@@ -73,9 +73,10 @@ class AnomalyClassifier_unsw:
             X = df.drop(target, axis=1)
             y = df[target]
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=50, shuffle=True)
-            y_pred = anoClf.predict(X)
+    
             # fit the model
             anoClf.fit(X_train, y_train)
+            y_pred = anoClf.predict(X)
         except TypeError as ex:
             print("Expected type of arg: pandas.core.frame.DataFrame")
         except Exception as ex:
