@@ -39,7 +39,7 @@ class AnomalyClassifier_nsl:
             X = df.drop(target, axis=1)
             y = df[target]
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=50, shuffle=True)
-
+            y_pred = anoClf.predict(X)
             # fit the model
             anoClf.fit(X_train, y_train)
         except TypeError as ex:
@@ -47,7 +47,7 @@ class AnomalyClassifier_nsl:
         except Exception as ex:
             print(f"An Exception Occured! {str(ex)}")
         else:
-            return anoClf, X_test, y_test
+            return anoClf, X_test, y_test, y_pred
 
 class AnomalyClassifier_unsw:
     def __init__():
@@ -73,7 +73,7 @@ class AnomalyClassifier_unsw:
             X = df.drop(target, axis=1)
             y = df[target]
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=50, shuffle=True)
-
+            y_pred = anoClf.predict(X)
             # fit the model
             anoClf.fit(X_train, y_train)
         except TypeError as ex:
@@ -81,4 +81,4 @@ class AnomalyClassifier_unsw:
         except Exception as ex:
             print(f"An Exception Occured! {str(ex)}")
         else:
-            return anoClf, X_test, y_test
+            return anoClf, X_test, y_test, y_pred

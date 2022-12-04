@@ -37,3 +37,27 @@ def BinMap1(df):
         print("Please ensure df has col named 'label'")
     else:
         return df
+def resultMap(df):
+    # map label to either 0 or 1
+    try:
+        if not isinstance(df, DataFrame):
+            raise TypeError
+        df['attack_class']  = df['attack_class'].apply(lambda v: "Normal" if v == 0 else "Attack")
+    except TypeError as ex:
+        print("Expected type of arg: pandas.core.frame.DataFrame")
+    except KeyError:
+        print("Please ensure df has col named 'label'")
+    else:
+        return df
+def resultMap1(df):
+    # map label to either 0 or 1
+    try:
+        if not isinstance(df, DataFrame):
+            raise TypeError
+        df['attack_cat']  = df['attack_cat'].apply(lambda v: "Normal" if v == 0 else "Attack")
+    except TypeError as ex:
+        print("Expected type of arg: pandas.core.frame.DataFrame")
+    except KeyError:
+        print("Please ensure df has col named 'label'")
+    else:
+        return df
