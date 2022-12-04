@@ -14,11 +14,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 ##########################
-kdd_train = pd.read_csv("/home/soosan/fyp/FYP/DataSets/KDDTrain+.txt", header=None, names=constants.COL_NAMES)
-kdd_test = pd.read_csv("/home/soosan/fyp/FYP/DataSets/KDDTest+.txt", header=None, names=constants.COL_NAMES)
+kdd_train = pd.read_csv("DataSets/KDDTrain+.txt", header=None, names=constants.COL_NAMES)
+kdd_test = pd.read_csv("DataSets/KDDTest+.txt", header=None, names=constants.COL_NAMES)
 
-unsw_train = pd.read_csv("/home/soosan/fyp/FYP/DataSets/UNSW_NB15_training-set.csv")
-unsw_test = pd.read_csv("/home/soosan/fyp/FYP/DataSets/UNSW_NB15_testing-set.csv")
+unsw_train = pd.read_csv("DataSets/UNSW_NB15_training-set.csv")
+unsw_test = pd.read_csv("DataSets/UNSW_NB15_testing-set.csv")
 
 #make them as one
 df = pd.concat([kdd_train, kdd_test])
