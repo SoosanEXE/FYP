@@ -3,7 +3,7 @@ from DataSets import constants as paths
 from AnomalyClassifier.AnomalyClassifier import AnomalyClassifier_nsl, AnomalyClassifier_unsw
 from AnomalyClassifier import constants as modelpaths
 from EvalMetrics.EvalMetrics import EvalMetrics
-from DataPreprocess.BinaryClassMapping import resultMap, resultMap1
+from DataPreprocess.BinaryClassMapping import resultMap
 from joblib import Parallel, delayed
 import joblib
 from DataPreprocess import constants
