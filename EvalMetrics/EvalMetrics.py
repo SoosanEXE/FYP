@@ -22,6 +22,7 @@ class EvalMetrics:
             print("Confusion Matrix:")
             tn, fp, fn, tp = confusion_matrix(y_test, y_pred, labels=[0, 1]).ravel()
             cm = confusion_matrix(y_test, y_pred, labels=[0, 1])
+            print(cm)
             disp = ConfusionMatrixDisplay(cm, display_labels=clf.classes_)
             disp.plot()
             plt.show()
