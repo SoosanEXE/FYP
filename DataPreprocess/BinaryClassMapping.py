@@ -9,16 +9,18 @@
 """
 
 from pandas.core.frame import DataFrame
-from BinaryClassMapping import constants
+
+NSL_TARGET = "attack_class"
+UNSW_TARGET = "attack_cat"
 
 def BinMap(df, target):
     # map label to either 0 or 1
     try:
         if not isinstance(df, DataFrame):
             raise TypeError
-        if target == constants.NSL_TARGET:
+        if target == NSL_TARGET:
             df[target]  = df[target].apply(lambda v: 0 if v == "normal" else 1)
-        elif target == constants.UNSW_TARGET:
+        elif target == UNSW_TARGET:
             df[target]  = df[target].apply(lambda v: 0 if v == "Normal" else 1)
     except TypeError as ex:
         print(f"Expected type of arg: pandas.core.frame.DataFrame {str(ex)}")
