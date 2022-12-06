@@ -9,7 +9,7 @@
 """
 
 from pandas.core.frame import DataFrame
-import constants
+from BinaryClassMapping import constants
 
 def BinMap(df, target):
     # map label to either 0 or 1
