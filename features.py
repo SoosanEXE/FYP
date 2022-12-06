@@ -9,16 +9,19 @@ rf = [ri1, ri2, ri3]
 allfs = [anova, info_gain, ri1, ri2, ri3, rfe]
 
 common = set(anova)
+common_i = set(anova)
 
 for i in allfs:
-    common = common & set(i)
+    common = common | set(i)
+    common_i = common_i & set(i)
 
 print(list(common))
-
+print()
+print(list(common_i))
 common_rf = set(ri1)
 for i in rf:
-    common_rf = common_rf & set(i)
-print(common_rf)
+    common_rf = common_rf | set(i)
+#print(common_rf)
 
 """ common features in all of the above
 ['same_srv_rate', 'flag', 'dst_host_same_srv_rate', 'count', 'dst_host_srv_count', 'service', 'logged_in']
