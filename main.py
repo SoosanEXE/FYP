@@ -7,7 +7,6 @@ from DataPreprocess.BinaryClassMapping import resultMap
 from joblib import Parallel, delayed
 import joblib
 from DataPreprocess import constants
-from IPython.display import HTML
 from Report import constants as reportpaths
 import warnings
 
