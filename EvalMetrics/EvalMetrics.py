@@ -8,7 +8,6 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import (precision_score, recall_score,\
     f1_score, confusion_matrix ,accuracy_score, \
         ConfusionMatrixDisplay, roc_curve, roc_auc_score)
-import matplotlib.pyplot as plt
 
 class EvalMetrics:
     def __init__():
