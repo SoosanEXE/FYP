@@ -19,7 +19,7 @@ warnings.filterwarnings('ignore')
 from sklearn.model_selection import train_test_split
 
 from sklearn.tree import DecisionTreeClassifier
-df_new1 = pd.read_parquet('UNSWpreprocessedsmote.parquet')
+df_new1 = pd.read_parquet('FYP/UNSWpreprocessedsmote.parquet')
 X = df_new1.drop('attack_cat', axis=1)
 y = df_new1['attack_cat']
 
